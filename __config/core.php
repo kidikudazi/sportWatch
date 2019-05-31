@@ -15,7 +15,7 @@ class dbconnect
 				$this->server = "localhost";
 				$this->servername = "root";
 				$this->serverpass = "";
-				$this->dbname = "rage";
+				$this->dbname = "sport_watch";
 	}
 	
 	public function connect()
