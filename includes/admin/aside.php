@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
             <li class="active">
-                <a class="" href="admin/home.php">
+                <a class="" href="/admin/admin/home.php">
                     <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -15,8 +15,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.php">Form Elements</a></li>
-                    <li><a class="" href="form_validation.php">Form Validation</a></li>
+                    <li><a class="" href="/admin/form_component.php">Form Elements</a></li>
+                    <li><a class="" href="/admin/form_validation.php">Form Validation</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -26,19 +26,19 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="general.php">Elements</a></li>
-                    <li><a class="" href="buttons.php">Buttons</a></li>
-                    <li><a class="" href="grids.php">Grids</a></li>
+                    <li><a class="" href="/admin/general.php">Elements</a></li>
+                    <li><a class="" href="/admin/buttons.php">Buttons</a></li>
+                    <li><a class="" href="/admin/grids.php">Grids</a></li>
                 </ul>
             </li>
             <li>
-                <a class="" href="widgets.html">
+                <a class="" href="/admin/widgets.php">
                     <i class="icon_genius"></i>
                     <span>Widgets</span>
                 </a>
             </li>
             <li>
-                <a class="" href="chart-chartjs.html">
+                <a class="" href="/admin/chart-chartjs.php">
                     <i class="icon_piechart"></i>
                     <span>Charts</span>
                 </a>
@@ -51,7 +51,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="basic_table.php">Basic Table</a></li>
+                    <li><a class="" href="/admin/basic_table.php">Basic Table</a></li>
                 </ul>
             </li>
 
@@ -62,11 +62,11 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="profile.php">Profile</a></li>
-                    <li><a class="" href="login.php"><span>Login Page</span></a></li>
-                    <li><a class="" href="contact.php"><span>Contact Page</span></a></li>
-                    <li><a class="" href="blank.php">Blank Page</a></li>
-                    <li><a class="" href="404.php">404 Error</a></li>
+                    <li><a class="" href="/admi/profile.php">Profile</a></li>
+                    <li><a class="" href="/admin/login.php"><span>Login Page</span></a></li>
+                    <li><a class="" href="/admin/contact.php"><span>Contact Page</span></a></li>
+                    <li><a class="" href="/admin/blank.php">Blank Page</a></li>
+                    <li><a class="" href="/admin/404.php">404 Error</a></li>
                 </ul>
             </li>
         </ul>
