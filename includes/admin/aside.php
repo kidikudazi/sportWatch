@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
             <li class="active">
-                <a class="" href="admin/home.php">
+                <a class="" href="/admin/home.php">
                     <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -15,8 +15,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="form_component.php">Form Elements</a></li>
-                    <li><a class="" href="form_validation.php">Form Validation</a></li>
+                    <li><a class="" href="/form_component.php">Form Elements</a></li>
+                    <li><a class="" href="/form_validation.php">Form Validation</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -26,13 +26,13 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="general.php">Elements</a></li>
-                    <li><a class="" href="buttons.php">Buttons</a></li>
-                    <li><a class="" href="grids.php">Grids</a></li>
+                    <li><a class="" href="/general.php">Elements</a></li>
+                    <li><a class="" href="/buttons.php">Buttons</a></li>
+                    <li><a class="" href="/grids.php">Grids</a></li>
                 </ul>
             </li>
             <li>
-                <a class="" href="widgets.html">
+                <a class="" href="/widgets.php">
                     <i class="icon_genius"></i>
                     <span>Widgets</span>
                 </a>
