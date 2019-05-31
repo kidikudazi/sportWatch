@@ -18,7 +18,7 @@ fullanme VARCHAR(255) NOT NULL,
 username VARCHAR(255) NOT NULL,
 password VARCHAR(255),
 reg_date TIMESTAMP
-)
+);
 
 /**
 * post table
@@ -31,7 +31,7 @@ heading VARCHAR(255) NOT NULL,
 body VARCHAR(255) NOT NULL,
 category VARCHAR(255),
 post_date VARCHAR(255)
-)
+);
 
 /**
 * slider table
@@ -42,7 +42,7 @@ picture VARCHAR(255) NOT NULL,
 heading VARCHAR(255) NOT NULL,
 link VARCHAR(255) NOT NULL,
 created_at TIMESTAMP
-)
+);
 
 /**
 * teams table
@@ -57,7 +57,7 @@ phone VARCHAR(255) NOT NULL,
 email VARCHAR(255) NULL,
 status ENUM('Active', 'Inactive') DEFAULT 'Active',
 created_at VARCHAR(255) NOT NULL
-)
+);
 
 /**
 * players table
@@ -72,7 +72,7 @@ jersey_number VARCHAR(255) NULL,
 created_at TIMESTAMP,
 CONSTRAINT player_team_id_foreign FOREIGN KEY (team_id)
 REFERENCES teams(id)
-)
+);
 
 /**
 * competition table 
@@ -86,7 +86,7 @@ start_date VARCHAR(255) NOT NULL,
 end_date VARCHAR(255) NOT NULL,
 status ENUM('Active', 'Finished') DEFAULT 'Active',
 created_at TIMESTAMP
-)
+);
 
 /**
 * competition teams table
@@ -98,7 +98,7 @@ team_id INT(10) UNSIGNED NOT NULL,
 created_at TIMESTAMP,
 CONSTRAINT competition_teams_team_id_foreign FOREIGN KEY (team_id) REFERENCES teams(id),
 CONSTRAINT competition_teams_competition_id_foreign FOREIGN KEY (competition_id) REFERENCES competitions(id)
-)
+);
 
 /**
 * fixtures table
@@ -115,5 +115,5 @@ created_at TIMESTAMP,
 CONSTRAINT fixtures_home_team_id_foreign FOREIGN KEY (home_team_id) REFERENCES teams(id),
 CONSTRAINT fixtures_away_team_id_foreign FOREIGN KEY (away_team_id) REFERENCES teams(id),
 CONSTRAINT fixtures_competition_id_foreign FOREIGN KEY (competition_id) REFERENCES competitions(id)
-)
+);
 
