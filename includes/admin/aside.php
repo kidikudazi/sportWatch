@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
             <li class="active">
-                <a class="" href="/admin/admin/home.php">
+                <a class="" href="/admin/home.php">
                     <i class="icon_house_alt"></i>
                     <span>Dashboard</span>
                 </a>
