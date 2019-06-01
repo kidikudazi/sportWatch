@@ -41,7 +41,7 @@ class SignIn extends dbconnect
 					window.location.href = '../admin/index.php';
 				  </script>";
 			}
-			
+
 		}else{
 
 			echo "<h2><font color='red'>Error!! invalid login details</font></h2>";
