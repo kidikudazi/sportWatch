@@ -36,7 +36,8 @@ class CreatePost extends dbconnect
 		// insert values into the database
 		$createPost = "INSERT INTO posts (post_image, heading, body, category, post_date)";
 		$createPost .= "VALUES ('".$this->target_directory."', '".$this->heading."', '".$this->body."', '".$this->category."', '".$this->post_date."')";
-		if(mysqli_query($this->plug, $createPost) === TRUE)
+
+		if(mysql_query($this->plug, $createPost) === TRUE)
 		{
 			// move files to folder
 			move_uploaded_file($this->file_temp, $this->target_directory);
