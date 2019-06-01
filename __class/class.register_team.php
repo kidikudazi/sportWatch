@@ -64,8 +64,6 @@ class RegisterTeam extends dbconnect {
 
 					if($email == null){
 
-					}else{
-
 						# save team's record
 						$save = "INSERT INTO teams (team_logo, team_name, coach_name, address, phone, email)";
 						$save .= "VALUES ('".$this->team_logo."', '".$this->team_name."', '".$this->coach_name."', '".$this->address."',";
@@ -81,6 +79,35 @@ class RegisterTeam extends dbconnect {
 						}else{
 
 							echo '<span>Sorry, your request could not be processed.</span>';
+						}
+					}else{
+
+						# validate team email
+						$check_team_email = "SELECT * FROM teams WHERE email = '".$this->email."' ";
+						$validate = mysqli_query($this->plug, $check_team_email);
+						$result = mysqli_num_rows($validate);
+
+						if($result > 0){
+
+							echo '<span style="color: red;">Sorry, email address already exists.</span>';
+						}else{
+
+							# save team's record
+							$save = "INSERT INTO teams (team_logo, team_name, coach_name, address, phone, email)";
+							$save .= "VALUES ('".$this->team_logo."', '".$this->team_name."', '".$this->coach_name."', '".$this->address."',";
+							$save .= " '".$this->phone."',  '".$this->email."')";
+
+							$query = mysqli_query($this->plug, $save);
+							if(!$query){
+
+								echo '<span style="color: red;">Sorry, an error occurred.</span>'.mysqli_error($this->plug);
+							}else if(mysqli_affected_rows($query) > 0){
+
+								echo '<span>Team Registration Successful.</span>';
+							}else{
+
+								echo '<span>Sorry, your request could not be processed.</span>';
+							}
 						}
 					}
 				}
