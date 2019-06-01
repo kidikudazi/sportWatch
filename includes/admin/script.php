@@ -1,9 +1,11 @@
-<script src="../public/dist/js/jquery.js"></script>
+<script src="../public/js/jquery-1.9.1.js"></script>
+<!-- <script src="../public/dist/js/jquery.js"></script>
 <script src="../public/dist/js/jquery-ui-1.10.4.min.js"></script>
-<script src="../public/dist/js/jquery-1.8.3.min.js"></script>
+<script src="../public/dist/js/jquery-1.8.3.min.js"></script> -->
 <script type="text/javascript" src="../public/dist/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="../public/dist/assets/ckeditor/ckeditor.js"></script>
 <!-- bootstrap -->
-<script src="../public/dist/js/bootstrap.min.js"></script>
+<script src="../public/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- nice scroll -->
 <script src="../public/dist/js/jquery.scrollTo.min.js"></script>
 <script src="../public/dist/js/jquery.nicescroll.js" type="text/javascript"></script>
@@ -38,3 +40,9 @@
 <script src="../public/dist/js/sparklines.js"></script>
 <script src="../public/dist/js/charts.js"></script>
 <script src="../public/dist/js/jquery.slimscroll.min.js"></script>
+<script src="../public/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../public/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../public/responsive_datatable/js/responsive.dataTables.min.js"></script>
+<script src="../public/ckeditor/ckeditor.js"></script>
+<script src="../public/js/jquery.validate.min.js"></script>
+<script src="../public/js/additional-methods.js"></script>
