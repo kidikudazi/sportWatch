@@ -24,7 +24,7 @@
 
 	<?php include('includes/header.php'); ?>
 
-    <div class="site-blocks-cover overlay" style="background-image: url(public/public/images/hero_bg_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(public/images/hero_bg_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-start">
           <div class="col-md-6 text-center text-md-left" data-aos="fade-up" data-aos-delay="400">
