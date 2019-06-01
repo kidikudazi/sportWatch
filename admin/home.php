@@ -153,139 +153,141 @@
 							</div>
 
 							<div class="panel-body">
-								<table id="example1" class="table table-bordered">
-									<thead>
-										<tr>
-											<th></th>
-											<th>Country</th>
-											<th>Users</th>
-											<th>Online</th>
-											<th>Performance</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-											<td>Germany</td>
-											<td>2563</td>
-											<td>1025</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
-												</div>
-												</div>
-												<span class="sr-only">73%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
-											<td>India</td>
-											<td>3652</td>
-											<td>2563</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
-												</div>
-												</div>
-												<span class="sr-only">57%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-											<td>Spain</td>
-											<td>562</td>
-											<td>452</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
-												</div>
-												</div>
-												<span class="sr-only">93%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
-											<td>Russia</td>
-											<td>1258</td>
-											<td>958</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												</div>
-												</div>
-												<span class="sr-only">20%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-											<td>USA</td>
-											<td>4856</td>
-											<td>3621</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												</div>
-												</div>
-												<span class="sr-only">20%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-											<td>Brazil</td>
-											<td>265</td>
-											<td>102</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												</div>
-												</div>
-												<span class="sr-only">20%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-											<td>Coloumbia</td>
-											<td>265</td>
-											<td>102</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												</div>
-												</div>
-												<span class="sr-only">20%</span>
-											</td>
-										</tr>
-										<tr>
-											<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-											<td>France</td>
-											<td>265</td>
-											<td>102</td>
-											<td>
-												<div class="progress thin">
-												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-												</div>
-												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-												</div>
-												</div>
-												<span class="sr-only">20%</span>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+								<div class="table-responsive">
+									<table id="example1" class="table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>S/N</th>
+												<th>Category</th>
+												<th>TItle</th>
+												<th>Date</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
+												<td>Germany</td>
+												<td>2563 47324732847328483473847234832</td>
+												<td>1025</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
+													</div>
+													</div>
+													<span class="sr-only">73%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
+												<td>India</td>
+												<td>3652</td>
+												<td>2563</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
+													</div>
+													</div>
+													<span class="sr-only">57%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
+												<td>Spain</td>
+												<td>562</td>
+												<td>452</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
+													</div>
+													</div>
+													<span class="sr-only">93%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
+												<td>Russia</td>
+												<td>1258</td>
+												<td>958</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													</div>
+													</div>
+													<span class="sr-only">20%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
+												<td>USA</td>
+												<td>4856</td>
+												<td>3621</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													</div>
+													</div>
+													<span class="sr-only">20%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
+												<td>Brazil</td>
+												<td>265</td>
+												<td>102</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													</div>
+													</div>
+													<span class="sr-only">20%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
+												<td>Coloumbia</td>
+												<td>265</td>
+												<td>102</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													</div>
+													</div>
+													<span class="sr-only">20%</span>
+												</td>
+											</tr>
+											<tr>
+												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
+												<td>France</td>
+												<td>265</td>
+												<td>102</td>
+												<td>
+													<div class="progress thin">
+													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+													</div>
+													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													</div>
+													</div>
+													<span class="sr-only">20%</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -348,7 +350,15 @@
 		});
 	});
 
-	$('#example1').DataTable();
+	$('#example1').DataTable({
+		destroy: true,
+		responsive: true,
+		columnDefs: [
+			{ responsivePriority: 1, targets: 0 },
+			{ responsivePriority: 1, targets: 1 },
+			{ responsivePriority: 1, targets: -1 }
+		]
+	});
 
 	$('#post_form').validate({
 		rules:{
