@@ -25,7 +25,7 @@
 
             <ul class="site-menu js-clone-nav d-none d-md-block">
                 <li class="has-children active">
-                    <a href="index.html/">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li class="has-children">
                     <a href="news.php">News</a>
