@@ -80,7 +80,7 @@ class RegisterTeam extends dbconnect {
 							echo '<span>Team Registration Successful.</span>';
 						}else{
 
-							echo '<span>Sorry, your request could not be proccessed.</span>';
+							echo '<span>Sorry, your request could not be processed.</span>';
 						}
 					}
 				}
