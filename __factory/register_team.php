@@ -7,7 +7,7 @@ include('../__class/class.register_team.php');
 $team_logo = $_FILES['logo']['name'];
 
 /* Location */
-$location = "upload/".$filename;
+$location = "uploads/".$filename;
 $uploadOk = 1;
 $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
 
@@ -35,7 +35,7 @@ if($uploadOk == 0) {
 		$email = $_REQUEST['email'];
 
 		# init registration
-		$register = new RegisterTeam();
+		$register = new RegisterTeam($team_logo, $team_name, $coach_name, $address, $phone, $email);
 		$register->register();
 
    	}else{
