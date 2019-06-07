@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include("../__config/core.php");
 /**
 * create new post class
@@ -37,14 +39,17 @@ class CreatePost extends dbconnect
 		$createPost = "INSERT INTO posts (post_image, heading, body, category, post_date)";
 		$createPost .= "VALUES ('".$this->target_directory."', '".$this->heading."', '".$this->body."', '".$this->category."', '".$this->post_date."')";
 
-		if(mysql_query($this->plug, $createPost) === TRUE)
+		if(mysqli_query($this->plug, $createPost) === TRUE)
 		{
 			// move files to folder
 			move_uploaded_file($this->file_temp, $this->target_directory);
-			echo "<h5 style='color:green'>Post created successfully.</h5>";
+			$_SESSION['success']  = "<div class='alert alert-success'><button class='close' data-dismiss='alert' id='msg-btn' onclick='return sessionRemove();'>&times;</button><h5 style='color:green'>Post created successfully.</h5></div>";
+
+			header('Location:../admin/home.php');
 		}else{
 
-			echo "<h2 style='color:red'>Sorry, an error occurred.</h2>";
+			$_SESSION['error'] =  "<div class='alert alert-danger'><button class='close' data-dismiss='alert'  onclick='return sessionRemove(); id='msg-btn'>&times;</button><h2 style='color:red'>Sorry, an error occurred.</h2></div>";
+			header('Location:../admin/home.php');
 		}
 	}
 }

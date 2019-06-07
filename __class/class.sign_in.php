@@ -35,7 +35,7 @@ class SignIn extends dbconnect
 			while ($row = mysqli_fetch_array($result)) {
 				# code...
 				extract($row);
-				$user = $row['email'];
+				$user = $row['username'];
 				$_SESSION['user'] = $user;
 				echo "<script>
 					window.location.href = '../admin/home.php';

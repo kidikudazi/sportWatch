@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,10 +96,21 @@
 							</div>
 							<div class="panel-body">
 								<div class="padd">
+									<?php
 
+										if(!empty($_SESSION['success'])) 
+										{
+											echo($_SESSION['success']);
+
+										}elseif(!empty($_SESSION['error'])){
+
+											echo($_SESSION['error']);
+										}
+
+									?>
 								<div class="form quick-post">
 									<!-- Edit profile form (not working)-->
-									<form method="POST" id="post_form" novalidate>
+									<form method="POST" id="post_form" action="../__factory/create.posts.php"  enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="title"><strong>Title</strong></label>
 											<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title">
@@ -111,7 +123,7 @@
 
 										<div class="form-group">
 											<label for="post_category"><strong>Post Category</strong></label>
-											<select class="form-control">
+											<select class="form-control" name="post_category">
 												<option value="">--Select Post Cateogry --</option>
 												<option value="General News">General News</option>
 												<option value="Match Highight">Match Highight</option>
@@ -400,6 +412,18 @@
 			}
 		}
 	});
+
+	function sessionRemove(){
+
+		$.ajax({
+			type:"GET",
+			url:"../functions/session_remover.php",
+			cache:false,
+			success:result=>{
+				alert('done');
+			}
+		})
+	}
 </script>
 </body>
 </html>

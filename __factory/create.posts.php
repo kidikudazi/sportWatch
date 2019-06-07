@@ -1,21 +1,23 @@
 <?php
+session_start();
+
 include('../__class/class.create_post.php');
 // get all request
-$picfile = $_FILES['file']['name'];
-$filesize = $_FILES['file']['size'];
+$picfile = $_FILES['post_image']['name'];
+$filesize = $_FILES['post_image']['size'];
 $target_directory = '../uploads/'.$picfile;
-$file_temp = $_FILES['file']['tmp_name'];
+$file_temp = $_FILES['post_image']['tmp_name'];
 
-$target_directory = $target_directory.basename($picfile);
+$target_file = $target_directory.basename($picfile);
 
-$heading = $_REQUEST['header'];
-$body = $_REQUEST['body'];
-$category = $_REQUEST['category'];
+$heading = $_REQUEST['post_title'];
+$body = $_REQUEST['post_content'];
+$category = $_REQUEST['post_category'];
 $post_date = time();
 
 if($filesize >= 2000000)
 {
-	echo "<h4 style='color:red'>Sorry, image size too, big.</h4>";
+	$_SESSION['error'] =  "<div class='alert alert-danger'><button class='close' data-dismiss='alert'  id='msg-btn' onclick='return sessionRemove();>&times;</button>Sorry, image size too, big.</div>";
 }else{
 
 	$createPost = new CreatePost($target_directory, $file_temp, $heading, $body, $category, $post_date);
