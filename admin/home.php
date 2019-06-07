@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php session_start();
+include('../__factory/fetch_all_posts.php');
+$edit='';
+if(!empty($_GET['id']))
+{
+	$records = new FetchRecords();
+
+	$edit  = $records->editPost($_GET['id']);
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,11 +119,46 @@
 
 									?>
 								<div class="form quick-post">
-									<!-- Edit profile form (not working)-->
-									<form method="POST" id="post_form" action="../__factory/create.posts.php"  enctype="multipart/form-data">
+									<!-- Create post form (not working)-->
+									<?php if(empty($edit)){ ?>
+										<form method="POST" id="post_form" action="../__factory/create.posts.php"  enctype="multipart/form-data">
+											<div class="form-group">
+												<label for="title"><strong>Title</strong></label>
+												<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title">
+											</div>
+
+											<div class="form-group">
+												<label for="picture"><strong>Picture</strong></label>
+												<input type="file" name="post_image" class="form-control" id="post_image">
+											</div>
+
+											<div class="form-group">
+												<label for="post_category"><strong>Post Category</strong></label>
+												<select class="form-control" name="post_category">
+													<option value="">--Select Post Category --</option>
+													<option value="General News">General News</option>
+													<option value="Match Highlight">Match Highlight</option>
+												</select>
+											</div>
+
+											<!-- Content -->
+											<div class="form-group">
+												<label for="content">Content</label>
+												<textarea class="form-control" id="post_content" name="post_content" rows="6"></textarea>
+											</div>
+											<!-- Cateogry -->
+
+											<!-- Buttons -->
+											<div class="form-group">
+												<button type="submit" class="btn btn-default" style="float:right">Save</button>
+											</div>
+										</form>
+									<?php }else{ ?>
+										<form method="POST" id="post_form" action="../__factory/update.posts.php"  enctype="multipart/form-data">
+											<input type="hidden" name="id" value="<?php echo $edit['id']; ?>">
 										<div class="form-group">
 											<label for="title"><strong>Title</strong></label>
-											<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title">
+											<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title" value="<?php echo $edit['heading']; ?>">
 										</div>
 
 										<div class="form-group">
@@ -124,24 +169,27 @@
 										<div class="form-group">
 											<label for="post_category"><strong>Post Category</strong></label>
 											<select class="form-control" name="post_category">
-												<option value="">--Select Post Cateogry --</option>
+												<option value="">--Select Post Category --</option>
 												<option value="General News">General News</option>
-												<option value="Match Highight">Match Highight</option>
+												<option value="Match Highlight">Match Highlight</option>
 											</select>
+											<p style="color: blue">Previous Selection: <?php echo($edit['category']) ?></p>
 										</div>
 
 										<!-- Content -->
 										<div class="form-group">
 											<label for="content">Content</label>
-											<textarea class="form-control" id="post_content" name="post_content" rows="6"></textarea>
+											<textarea class="form-control" id="post_content" name="post_content" rows="6"><?php echo($edit['body']); ?>
+											</textarea>
 										</div>
 										<!-- Cateogry -->
 
 										<!-- Buttons -->
 										<div class="form-group">
-											<button type="submit" class="btn btn-default" style="float:right">Save</button>
+											<button type="submit" class="btn btn-info" style="float:right">Update</button>
 										</div>
 									</form>
+									<?php } ?>
 								</div>
 
 
@@ -166,7 +214,7 @@
 
 							<div class="panel-body">
 								<div class="table-responsive">
-									<table id="example1" class="table table-striped table-bordered">
+									<table id="example1" class="table table-striped table-bordered responsive nowrap">
 										<thead>
 											<tr>
 												<th>S/N</th>
@@ -177,126 +225,26 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-												<td>Germany</td>
-												<td>2563 47324732847328483473847234832</td>
-												<td>1025</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
-													</div>
-													</div>
-													<span class="sr-only">73%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
-												<td>India</td>
-												<td>3652</td>
-												<td>2563</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%">
-													</div>
-													</div>
-													<span class="sr-only">57%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-												<td>Spain</td>
-												<td>562</td>
-												<td>452</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
-													</div>
-													</div>
-													<span class="sr-only">93%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/India.png" style="height:18px; margin-top:-2px;"></td>
-												<td>Russia</td>
-												<td>1258</td>
-												<td>958</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													</div>
-													</div>
-													<span class="sr-only">20%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-												<td>USA</td>
-												<td>4856</td>
-												<td>3621</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													</div>
-													</div>
-													<span class="sr-only">20%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-												<td>Brazil</td>
-												<td>265</td>
-												<td>102</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													</div>
-													</div>
-													<span class="sr-only">20%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-												<td>Coloumbia</td>
-												<td>265</td>
-												<td>102</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													</div>
-													</div>
-													<span class="sr-only">20%</span>
-												</td>
-											</tr>
-											<tr>
-												<td><img src="../public/dist/img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-												<td>France</td>
-												<td>265</td>
-												<td>102</td>
-												<td>
-													<div class="progress thin">
-													<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-													</div>
-													<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-													</div>
-													</div>
-													<span class="sr-only">20%</span>
-												</td>
-											</tr>
+											<?php 
+												$i =1;
+
+												foreach ($data as $list) {
+													# code...
+													echo '<tr>';
+													echo '<td>'.$i.'</td>';
+													echo '<td>'.$list['category'].'</td>';
+													echo '<td>'.$list['heading'].'</td>';
+													echo '<td>'.date('d-m-y', $list['post_date']).'</td>';
+													echo '<td>
+															<a href="home.php?id='.$list['id'].'" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit
+															</a>
+															<a href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Delete
+															</a>
+														 </td>
+													</tr>';
+													$i++;
+												}
+											?>
 										</tbody>
 									</table>
 								</div>
@@ -420,7 +368,7 @@
 			url:"../functions/session_remover.php",
 			cache:false,
 			success:result=>{
-				alert('done');
+				return;
 			}
 		})
 	}
