@@ -28,9 +28,9 @@
 <body class="login-img3-body">
 
   <div class="container">
-    <div id="info"></div>
     <form class="login-form" method="POST" onsubmit="return loginAdmin();">
       <div class="login-wrap">
+        <div id="info"></div>
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_profile"></i></span>
@@ -43,17 +43,6 @@
         <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
       </div>
     </form>
-    <div class="text-right">
-      <div class="credits">
-          <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-          -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
   </div>
 <?php include('../includes/admin/script.php'); ?>
 <script>

@@ -30,12 +30,12 @@
                 <li class="has-children">
                     <a href="news.php">News</a>
                     <ul class="dropdown arrow-top">
+                        <li><a href="#">General News</a></li>
                         <li><a href="#">Match Highlight</a></li>
-                        <li><a href="#">Sport Highlight</a></li>
                     </ul>
                 </li>
-                <li><a href="matches.php">Matches</a></li>
-                <li><a href="team.php">Team</a></li>
+                <li><a href="matches.php">Competitions</a></li>
+                <li><a href="team.php">Teams</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>

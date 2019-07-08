@@ -1,61 +1,16 @@
 <?php 
 session_start();
 include('../functions/auth.php');
-include('../__factory/fetch_all_posts.php');
+include('../__factory/fetch_all_competitions.php');
 $edit='';
 if(!empty($_GET['id']))
 {
 	$records = new FetchRecords();
 
-	$edit  = $records->editPost($_GET['id']);
+	$edit  = $records->editCompetition($_GET['id']);
 }
 
-$posts=$players=$competitions=$teams='';
-function getPostCount()
-{
-	$conn = mysqli_connect("localhost", "root", "", "sport_watch");
-	$getPosts = "SELECT * FROM posts";
-
-	$result = mysqli_query($conn, $getPosts);
-
-	$output = mysqli_num_rows($result);
-	return $output;
-}
-function getCompetitionCount()
-{
-	$conn = mysqli_connect("localhost", "root", "", "sport_watch");
-	$getPosts = "SELECT * FROM competitions";
-
-	$result = mysqli_query($conn, $getPosts);
-
-	$output = mysqli_num_rows($result);
-	return $output;
-}
-
-function getPlayersCount()
-{
-	$conn = mysqli_connect("localhost", "root", "", "sport_watch");
-	$getPosts = "SELECT * FROM players";
-
-	$result = mysqli_query($conn, $getPosts);
-
-	$output = mysqli_num_rows($result);
-	return $output;
-}
-
-function teamsCount()
-{
-	$conn = mysqli_connect("localhost", "root", "", "sport_watch");
-	$getPosts = "SELECT * FROM teams";
-
-	$result = mysqli_query($conn, $getPosts);
-
-	$output = mysqli_num_rows($result);
-	return $output;
-}
-
-?>
-
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +21,7 @@ function teamsCount()
     <meta name="keyword" content="Sport watch">
     <link rel="shortcut icon" href="../public/dist/img/favicon.png">
 
-    <title>Administrator |  Home</title>
+    <title>Administrator |  Register Competitions</title>
 
     <?php include('../includes/admin/style.php'); ?>
 </head>
@@ -92,59 +47,16 @@ function teamsCount()
 						<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
 						<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="/admin/home.php">Home</a></li>
-						<li><i class="fa fa-laptop"></i>Dashboard</li>
+						<li><i class="fa fa-laptop"></i>Register Competitions</li>
 						</ol>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box blue-bg">
-							<i class="fa fa-comment-o"></i>
-							<div class="count"><?php echo getPostCount(); ?></div>
-							<div class="title">Posts</div>
-						</div>
-						<!--/.info-box-->
-					</div>
-					<!--/.col-->
-
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box brown-bg">
-							<i class="fa fa-users"></i>
-							<div class="count"><?php echo getPlayersCount(); ?></div>
-							<div class="title">Players</div>
-						</div>
-						<!--/.info-box-->
-					</div>
-					<!--/.col-->
-
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box dark-bg">
-							<i class="fa fa-calendar"></i>
-							<div class="count"><?php echo getCompetitionCount(); ?></div>
-							<div class="title">Competitions</div>
-						</div>
-						<!--/.info-box-->
-					</div>
-					<!--/.col-->
-
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box green-bg">
-							<i class="fa fa-user"></i>
-							<div class="count"><?php echo teamsCount(); ?></div>
-							<div class="title">Teams</div>
-						</div>
-						<!--/.info-box-->
-					</div>
-					<!--/.col-->
-				</div>
-				<!--/.row-->
-
-				<div class="row">
 					<div class="col-lg-5 col-md-5">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								<div class="pull-left">Quick Post</div>
+								<div class="pull-left">Regsitration Form</div>
 								<div class="widget-icons pull-right">
 								<a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
 								<a href="#" class="wclose"><i class="fa fa-times"></i></a>
@@ -168,32 +80,28 @@ function teamsCount()
 								<div class="form quick-post">
 									<!-- Create post form (not working)-->
 									<?php if(empty($edit)){ ?>
-										<form method="POST" id="post_form" action="../__factory/create.posts.php"  enctype="multipart/form-data">
+										<form method="POST" id="reg_form" action="../__factory/create.competitions.php"  enctype="multipart/form-data">
 											<div class="form-group">
-												<label for="title"><strong>Title</strong></label>
-												<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title">
+												<label for="title"><strong>Competition Name</strong></label>
+												<input type="text" name="competition_name" class="form-control" placeholder="Enter Competition Name" id="competition_name">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition Location</strong></label>
+												<input type="text" name="competition_location" class="form-control" placeholder="Enter Competition Location" id="competition_location">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition Start Date</strong></label>
+												<input type="text" name="start_date" class="form-control" placeholder="Enter Competition Start Date" id="start_date">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition End Date</strong></label>
+												<input type="text" name="end_date" class="form-control" placeholder="Enter Competition End Date" id="end_date">
 											</div>
 
 											<div class="form-group">
-												<label for="picture"><strong>Picture</strong></label>
-												<input type="file" name="post_image" class="form-control" id="post_image">
+												<label for="picture"><strong>Competition Logo</strong></label>
+												<input type="file" name="logo" class="form-control" id="logo">
 											</div>
-
-											<div class="form-group">
-												<label for="post_category"><strong>Post Category</strong></label>
-												<select class="form-control" name="post_category">
-													<option value="">--Select Post Category --</option>
-													<option value="General News">General News</option>
-													<option value="Match Highlight">Match Highlight</option>
-												</select>
-											</div>
-
-											<!-- Content -->
-											<div class="form-group">
-												<label for="content">Content</label>
-												<textarea class="form-control" id="post_content" name="post_content" rows="6"></textarea>
-											</div>
-											<!-- Cateogry -->
 
 											<!-- Buttons -->
 											<div class="form-group">
@@ -201,40 +109,35 @@ function teamsCount()
 											</div>
 										</form>
 									<?php }else{ ?>
-										<form method="POST" id="post_form" action="../__factory/update.posts.php"  enctype="multipart/form-data">
+										<form method="POST" id="reg_form" action="../__factory/update.competition.php"  enctype="multipart/form-data">
 											<input type="hidden" name="id" value="<?php echo $edit['id']; ?>">
-										<div class="form-group">
-											<label for="title"><strong>Title</strong></label>
-											<input type="text" name="post_title" class="form-control" placeholder="Enter Title" id="post_title" value="<?php echo $edit['heading']; ?>">
-										</div>
+										
+											<div class="form-group">
+												<label for="title"><strong>Competition Name</strong></label>
+												<input type="text" name="competition_name" value="<?php echo $edit['competition_name']; ?>" class="form-control" placeholder="Enter Competition Name" id="competition_name">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition Location</strong></label>
+												<input type="text" name="competition_location" value="<?php echo $edit['location']; ?>" class="form-control" placeholder="Enter Competition Location" id="competition_location">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition Start Date</strong></label>
+												<input type="text" name="start_date" value="<?php echo $edit['start_date']; ?>" class="form-control" placeholder="Enter Competition Start Date" id="start_date">
+											</div>
+											<div class="form-group">
+												<label for="title"><strong>Competition End Date</strong></label>
+												<input type="text" name="end_date" class="form-control" value="<?php echo $edit['end_date']; ?>"  placeholder="Enter Competition End Date" id="end_date">
+											</div>
 
-										<div class="form-group">
-											<label for="picture"><strong>Picture</strong></label>
-											<input type="file" name="post_image" class="form-control" id="post_image">
-										</div>
+											<div class="form-group">
+												<label for="picture"><strong>Competition Logo</strong></label>
+												<input type="file" name="logo" class="form-control" id="logo">
+											</div>
 
-										<div class="form-group">
-											<label for="post_category"><strong>Post Category</strong></label>
-											<select class="form-control" name="post_category">
-												<option value="">--Select Post Category --</option>
-												<option value="General News">General News</option>
-												<option value="Match Highlight">Match Highlight</option>
-											</select>
-											<p style="color: blue">Previous Selection: <?php echo($edit['category']) ?></p>
-										</div>
-
-										<!-- Content -->
-										<div class="form-group">
-											<label for="content">Content</label>
-											<textarea class="form-control" id="post_content" name="post_content" rows="6"><?php echo($edit['body']); ?>
-											</textarea>
-										</div>
-										<!-- Cateogry -->
-
-										<!-- Buttons -->
-										<div class="form-group">
-											<button type="submit" class="btn btn-info" style="float:right">Update</button>
-										</div>
+											<!-- Buttons -->
+											<div class="form-group">
+												<button type="submit" class="btn btn-info" style="float:right">Update</button>
+											</div>
 									</form>
 									<?php } ?>
 								</div>
@@ -252,7 +155,7 @@ function teamsCount()
 						<div id="info"></div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
+								<h2><i class="fa fa-flag-o red"></i><strong>Competitions</strong></h2>
 								<div class="panel-actions">
 									<a href="" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
 									<a href="" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -266,8 +169,8 @@ function teamsCount()
 										<thead>
 											<tr>
 												<th>S/N</th>
-												<th>Category</th>
-												<th>TItle</th>
+												<th>Competition Name</th>
+												<th>Competition location</th>
 												<th>Date</th>
 												<th>Action</th>
 											</tr>
@@ -280,11 +183,11 @@ function teamsCount()
 													# code...
 													echo '<tr>';
 													echo '<td>'.$i.'</td>';
-													echo '<td>'.$list['category'].'</td>';
-													echo '<td>'.$list['heading'].'</td>';
-													echo '<td>'.date('d-m-y', $list['post_date']).'</td>';
+													echo '<td>'.$list['competition_name'].'</td>';
+													echo '<td>'.$list['location'].'</td>';
+													echo '<td>'.$list['start_date'].' - '.$list['end_date'].'</td>';
 													echo '<td>
-															<a href="home.php?id='.$list['id'].'" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit
+															<a href="reg_competitions.php?id='.$list['id'].'" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit
 															</a>
 															<a href="javascript:void(0);" onclick="return deletePost('.$list['id'].');" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Delete
 															</a>
@@ -363,22 +266,25 @@ function teamsCount()
 		]
 	});
 
-	$('#post_form').validate({
+	$('#reg_form').validate({
 		rules:{
-			post_image: {required:true, extension: true, maxsize: 1048576},
-			post_title: {required:true, minlength: 3},
-			post_category: {required: true},
-			post_content: {required: true}
+			logo: {required:true, extension: true, maxsize: 1048576},
+			competition_name: {required:true, minlength: 3},
+			competition_location: {required: true},
+			start_date: {required: true},
+			end_date: {required: true}
 		},
 		messages:{
-			post_image:{
+			logo:{
 				required: 'The Post Image field is required.',
 				extension: 'Invalid Extension format selected for the Images.',
 				maxsize: 'Image cannot be greater than 1MB.'
 			},
-			post_title:{required: 'The Post Title field is required.'},
-			post_category: {required: 'The Post Category field is required.'},
-			post_content: {required: 'The Post Content field is required.'}
+			competition_name:{required: 'The Competition Name field is required.'},
+			competition_location: {required: 'The Competition Location field is required.'},
+			start_date: {required: 'The Competition Start Date field is required.'},
+			end_date: {required: 'The Competition End Date field is required.'}
+
 		},
 		errorClass: 'help-block',
 		errorElement: 'strong',
@@ -419,14 +325,14 @@ function teamsCount()
 	// delete post
 	function deletePost(id)
 	{
-		var post_id = id;
+		var id = id;
 
-		if(post_id.length > 0 || post_id != ''){
+		if(id.length > 0 || id != ''){
 
 			$.ajax({
 				type:"POST",
-				url:"../__factory/delete.post.php",
-				data:{post_id:post_id},
+				url:"../__factory/delete.competition.php",
+				data:{id:id},
 				cache:false,
 				success:res=>{
 					$("#info").html(res);

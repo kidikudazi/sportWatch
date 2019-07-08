@@ -36,7 +36,7 @@ class SignIn extends dbconnect
 				# code...
 				extract($row);
 				$user = $row['username'];
-				$_SESSION['user'] = $user;
+				$_SESSION['admin'] = $user;
 				echo "<script>
 					window.location.href = '../admin/home.php';
 				  </script>";
