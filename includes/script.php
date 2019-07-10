@@ -8,4 +8,21 @@
 <script src="public/js/jquery.countdown.min.js"></script>
 <script src="public/js/jquery.magnific-popup.min.js"></script>
 <script src="public/js/aos.js"></script>
-<script src="public/js/main.js"></script>  
+<script src="public/js/main.js"></script>
+<script>
+   window.addEventListener('load', e => {
+       var menu = $('.menu-link-item');
+       for(var i = 0; i < menu.length; i++)
+       {
+           var anchorMenu = menu[i].children[0].pathname;
+           if(anchorMenu == window.location.pathname)
+           {
+               menu[i].setAttribute('class', 'active');
+           }
+           else
+           {
+               menu[i].removeAttribute('class', 'active');
+           }
+       }
+   });
+</script>  

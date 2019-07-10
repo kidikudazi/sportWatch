@@ -18,7 +18,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <span class="profile-ava">
-                        <img alt="" src="../public/dist/img/avatar1_small.jpg">
+                       <i class="fa fa-user"></i>
                     </span>
                     <span class="username">Administrator</span>
                     <b class="caret"></b>

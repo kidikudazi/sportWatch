@@ -4,45 +4,7 @@
             <div class="col-lg-4">
                 <div class="mb-5">
                     <h3 class="footer-heading mb-4">About Sportz</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
-                </div>
-
-                <div class="mb-5">
-                    <h3 class="footer-heading mb-4">Recent Blog</h3>
-                    <div class="block-25">
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="public/images/img_1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="public/images/img_1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="public/images/img_1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <p>This a platforrm for local football monitoring within Ilorin</p>
                 </div>
             </div>
 
@@ -84,18 +46,8 @@
 
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="mb-5">
-                    <h3 class="footer-heading mb-4">Watch Video</h3>
-                    <div class="block-16">
-                        <figure>
-                        <img src="public/images/img_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                        <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="mb-5">
                     <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                    <p></p>
 
                     <form action="#" method="post">
                         <div class="input-group mb-3">

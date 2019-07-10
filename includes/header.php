@@ -24,20 +24,14 @@
             <div class="d-inline-block d-md-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
             <ul class="site-menu js-clone-nav d-none d-md-block">
-                <li class="has-children active">
+                <li class="menu-link-item active">
                     <a href="index.php">Home</a>
                 </li>
-                <li class="has-children">
-                    <a href="news.php">News</a>
-                    <ul class="dropdown arrow-top">
-                        <li><a href="#">General News</a></li>
-                        <li><a href="#">Match Highlight</a></li>
-                    </ul>
-                </li>
-                <li><a href="matches.php">Competitions</a></li>
-                <li><a href="team.php">Teams</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li class="menu-link-item"><a href="news.php">News</a></li>
+                <li class="menu-link-item"><a href="matches.php">Competitions</a></li>
+                <li class="menu-link-item"><a href="team.php">Teams</a></li>
+                <li class="menu-link-item"><a href="about.php">About</a></li>
+                <li class="menu-link-item"><a href="contact.php">Contact</a></li>
             </ul>
         </div>
     </nav>

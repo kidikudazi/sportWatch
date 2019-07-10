@@ -1,25 +1,26 @@
 <?php 
-
+  $id = $_GET['id'];
+  if(empty($id))
+  {
+    header("location:index.php");
+  }
   // get all news
-  function matchHighlight()
+  function newsDetails($id)
   {
     $conn = mysqli_connect("localhost", "root", "", "sport_watch");
-    $fetchNews = "SELECT * FROM posts ORDER BY id DESC ";
+    $fetchNews = "SELECT * FROM posts WHERE id = '".$id."' ";
 
     $result = mysqli_query($conn, $fetchNews);
 
     $totalRecords = mysqli_num_rows($result);
 
    if($totalRecords > 0){
-      $data = [];
-      while ($row = mysqli_fetch_assoc($result)) {
+      
+      $row = mysqli_fetch_assoc($result);
         # code...
-        $data[] = $row;
-      }
-      return $data;
+        return $row;
     }else{
-      $data = [];
-      return $data;
+      header("location:index.php");
     }
   }
  ?>
@@ -65,24 +66,20 @@
         <div class="row mb-5">
 
           <?php 
-            $data = matchHighlight();
-            foreach($data as $list)
-            {
-              echo('<div class="col-md-6 col-lg-4 mb-4">');
+            $list = newsDetails($id);
+              echo('<div class="col-md-6 col-lg-12 mb-4">');
               echo('<div class="post-entry">');
                 echo('<div class="image">');
-                  echo('<img src="'.str_replace('../', '', $list['post_image']).'" alt="Image" class="img-fluid img-responsive" style="width:100%;">');
+                  echo('<img src="'.str_replace('../', '', $list['post_image']).'" alt="Image" class="img-fluid img-responsive" style="width:100%;object-fit: cover;overflow: hidden;margin:auto;">');
                 echo('</div>');
                 echo('<div class="text p-4">');
-                  echo('<h2 class="h5 text-black"><a href="news_details.php?id='.$list['id'].'">'.$list['heading'].'</a></h2>');
+                  echo('<h2 class="h5 text-black"><a href="#">'.$list['heading'].'</a></h2>');
                   echo('<span class="text-uppercase date d-block mb-3"><small>By Sportz Watch; '.date("M d, Y", $list['post_date']).'</small></span>');
-                  echo('<p class="mb-0">'.substr($list['body'], 0, 45).'</p>');
+                  echo('<p class="mb-0">'.$list['body'].'</p>');
                 echo(
                   '</div>
                     </div>
-                  </div>'
-                );
-            }
+                  </div>');
           ?>
 
         </div>
